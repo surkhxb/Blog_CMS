@@ -109,7 +109,7 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Contributors
 
-- **Tatwadarshi** - Developer
+- **Surkhab Sandhu** - Developer
 
 
 

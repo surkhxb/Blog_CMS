@@ -1,0 +1,281 @@
+/* Global Styles */
+body {
+    font-family: "Roboto", sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f7fa;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    margin: 30px 100px;
+    font-size: 36px;
+    color: #2c3e50;
+}
+
+label {
+    font-size: 14px;
+    color: #2c3e50;
+    font-weight: bold;
+    margin-right: 5px; /* Optional for spacing */
+}
+/* Search Box Container */
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 20px auto;
+    padding: 10px 20px;
+    width: 100%;
+    max-width: 600px;
+    background-color: #f5f7fa;
+    border-radius: 10px;
+    
+}
+
+/* Search Label */
+.search-container label {
+    font-size: 14px;
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+/* Search Input */
+.search-input {
+    flex: 1;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-input:focus {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.3);
+}
+
+/* Search Button */
+.search-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    background-color: #3498db;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.search-btn:hover {
+    background-color: #2980b9;
+    transform: scale(1.1);
+}
+
+.reset-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    background-color: #e74c3c;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.reset-btn:hover {
+    background-color: #c0392b;
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .search-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .search-input {
+        width: 100%;
+    }
+}
+
+.logout-btn {
+    float: right;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.logout-btn:hover {
+    background-color: #c0392b;
+    transform: scale(1.1);
+}
+
+/* Filter and Sort Container */
+.filter-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px auto;
+    flex-wrap: wrap;
+}
+
+.filter-select {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.filter-select:hover,
+.filter-select:focus {
+    border-color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.3);
+}
+
+/* Grid Container for Posts */
+.posts-grid-container {
+    display: flex;
+    justify-content: center;
+    margin: 30px auto;
+    padding: 0 80px; /* Padding for wider margins */
+    max-width: 1200px;
+    box-sizing: border-box; /* Ensures padding is included in total width */
+}
+
+/* Grid Layout for Posts */
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Always 4 columns per row */
+    gap: 25px;
+    max-width: 100%;
+    margin: 70px; /* Center grid within the container */
+}
+
+/* Individual Post Styles */
+.posts-grid a.post {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    width: 330px; /* Fixed width */
+    height: 500px; /* Fixed height */
+}
+
+/* Hover Effects */
+.posts-grid a.post:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Post Image */
+.posts-grid a.post img {
+    width: 100%;
+    height: 280px; /* Fixed height for image */
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    transition: transform 0.3s ease;
+}
+
+.posts-grid a.post:hover img {
+    transform: scale(1.05);
+}
+
+/* Post Title */
+.posts-grid a.post h2 {
+    font-size: 18px;
+    margin: 10px;
+    color: #2c3e50;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.posts-grid a.post:hover h2 {
+    color: #3498db;
+}
+
+/* Post Summary */
+.posts-grid a.post p {
+    font-size: 14px;
+    color: #7f8c8d;
+    margin: 5px 10px 10px;
+    text-align: center;
+}
+
+/* Post Meta Information */
+.posts-grid a.post .author,
+.posts-grid a.post .date {
+    display: block;
+    font-size: 12px;
+    color: #95a5a6;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+/* Animation for Fade-In */
+.posts-grid a.post img,
+.posts-grid a.post h2,
+.posts-grid a.post p {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design (Disabled for Fixed Layout) */
+/* Responsive Design (Optional for Fixed Layout) */
+@media (max-width: 1200px) {
+    .posts-grid {
+        grid-template-columns: repeat(4, 1fr); /* Fixed 4 columns */
+    }
+}
+
+@media (max-width: 992px) {
+    .posts-grid {
+        grid-template-columns: repeat(4, 1fr); /* Fixed 4 columns */
+    }
+}
+
+@media (max-width: 768px) {
+    .posts-grid {
+        grid-template-columns: repeat(4, 1fr); /* Fixed 4 columns */
+    }
+}
+
+@media (max-width: 576px) {
+    .posts-grid {
+        grid-template-columns: repeat(4, 1fr); /* Fixed 4 columns */
+    }
+}

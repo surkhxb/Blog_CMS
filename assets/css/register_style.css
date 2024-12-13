@@ -1,0 +1,105 @@
+/* Import a clean, modern font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('../images/register_background.jpg') no-repeat center center fixed;
+    background-size: 100vw 120vh; /* Custom size (80% of viewport width and 60% of viewport height) */
+    position: relative;
+}
+
+/* Apply the blur effect only on the background image */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../images/register_background.jpg') no-repeat center center fixed;
+    background-size: 100vw 120vh; /* Custom size (same as the body background) */
+    filter: blur(5px); /* Apply blur only on the background */
+    z-index: -1;
+}
+
+#webcrumbs {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    width: 320px;
+    padding: 50px;
+    z-index: 1; /* Ensure it is above the blurred background */
+    text-align: left;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left; /* Ensure left alignment for all content inside the form */
+}
+
+label {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 8px;
+    text-align: left; /* Align labels to the left */
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #333;
+    width: calc(100% - 1px);
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    background-color: #ff6f91; /* Medium pink */
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #d54b73; /* Dark pink */
+}
+
+p {
+    color: #666;
+    font-size: 14px;
+    text-align: center; /* Keep this centered for better readability */
+}
+
+a {
+    color: #ff6f91;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    text-decoration: underline;
+}

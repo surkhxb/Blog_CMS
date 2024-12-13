@@ -1,0 +1,273 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Style for the top navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(51, 51, 51, 0.9); /* Semi-transparent black background */
+    padding: 20px 10px;
+    color: white;
+    position: fixed; /* Fix the navbar at the top */
+    top: 0; /* Align to the top of the viewport */
+    left: 0; /* Ensure it spans the entire width */
+    width: 100%; /* Full-width navbar */
+    z-index: 1000; /* Ensure it stays above other content */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
+    backdrop-filter: blur(8px);
+}
+
+
+.navbar .nav-buttons button {
+    box-shadow: none;
+}
+
+.navbar .greeting {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif; /* Updated font for a modern look */
+    color: rgb(255, 255, 255); /* White color for attention */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.navbar .nav-buttons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-right: 30px; /* Shift both buttons together */
+}
+
+.navbar .nav-buttons a,
+.navbar .nav-buttons button {
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.logout-btn, .latest-btn {
+    padding: 10px 20px; /* Adjust padding as needed */
+    margin: 0 10px; /* Adjust margin as needed */
+}
+
+.latest-btn-form {
+    display: inline-block; /* Prevent the form from behaving like a block element */
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove default padding */
+    background: none; /* Remove any background color */
+    border: none; /* Remove any border */
+}
+
+
+.navbar .nav-buttons .logout-btn {
+    background-color: #FF5733; /* Red color for logout */
+}
+
+.navbar .nav-buttons .logout-btn:hover {
+    background-color: #E74C3C; /* Darker red on hover */
+    transform: scale(1.05);
+}
+
+.navbar .nav-buttons .latest-btn {
+    background-color: #3498DB; /* Blue color for latest blogs */
+    padding: 10px 20px; /* Adjust padding as needed */
+    margin: 0; /* Ensure no extra space is added */
+    box-shadow: none; /* Remove any shadow if present */
+    border: none; /* Ensure no border */
+}
+
+.navbar .nav-buttons .latest-btn:hover {
+    background-color: #2980B9; /* Darker blue on hover */
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+h1 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-top: 90px;
+    color: #333;
+}
+
+form {
+    margin: 20px auto;
+    max-width: 1400px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f4f4f9;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+form h3 {
+    font-size: 1.8em;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+form input[type="text"], form textarea, form select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    color: #333;
+    box-sizing: border-box;
+}
+
+form input[type="file"] {
+    padding: 8px;
+    margin: 10px 0;
+}
+
+form input[type="submit"], form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 1em;
+}
+
+form input[type="submit"]:hover, form button:hover {
+    background-color: #45a049;
+}
+
+textarea {
+    height: 200px;
+}
+
+h3 {
+    font-size: 1.6em;
+    color: #444;
+    margin-top: 30px;
+}
+
+.post-list {
+    margin-top: 30px;
+}
+
+.post {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.post img {
+    width: 600px; /* Set fixed width */
+    height: auto; /* Maintain aspect ratio */
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.post form {
+    width: 100%;
+}
+
+/* Style for Update and Delete buttons */
+.update-btn, .delete-btn {
+    padding: 10px 15px; /* Reduce the size */
+    font-size: 0.9em; /* Smaller font size */
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-left: 0; /* Align to the left side */
+    margin-right: 10px; /* Space between buttons */
+}
+
+.update-btn {
+    background-color: #3498DB; /* Blue color for Update */
+    color: white;
+}
+
+.update-btn:hover {
+    background-color: #2980B9; /* Darker blue on hover */
+}
+
+.delete-btn {
+    background-color: #E74C3C; /* Red color for Delete */
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #C0392B; /* Darker red on hover */
+}
+
+/* Popup Box Styles */
+.popup-box {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust position to center */
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 20px;
+    z-index: 9999;
+    animation: zoomIn 0.3s ease-out;
+    transform-origin: center center; /* Ensure scaling starts from the center */
+}
+
+/* Popup Content */
+.popup-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-content p {
+    font-size: 1.2em;
+    color: #333; /* Default text color */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Target error messages specifically */
+.popup-error-message {
+    color: red; /* Apply red color to error messages */
+}
+
+.popup-content button {
+    background: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.popup-content button:hover {
+    background: #0056b3;
+}
+
+/* Zoom In Animation */
+@keyframes zoomIn {
+    from {
+        transform: scale(0.5) translate(-50%, -50%); /* Starts smaller and centered */
+        opacity: 0;
+    }
+    to {
+        transform: scale(1) translate(-50%, -50%); /* Ends at full size and centered */
+        opacity: 1;
+    }
+}

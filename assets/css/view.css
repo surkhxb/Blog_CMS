@@ -1,0 +1,308 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #cfc4c4;
+    color: #333;
+}
+
+.post-container {
+    max-width: 1450px;
+    margin: 50px;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.post-container h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.post-image {
+    max-width: calc(100% - 40px); /* Ensure it fits within the container's padding */
+    height: auto;
+    margin: 20px auto; /* Center the image horizontally */
+    display: block; /* Block-level element for centering */
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+
+.post-image:hover {
+    transform: scale(1.05);
+}
+
+.post-body {
+    font-size: 1.2em;
+    color: #444;
+    margin: 20px 0;
+}
+
+.post-meta {
+    color: #777;
+    font-style: italic;
+}
+
+.comment {
+    padding: 5px 0;
+    font-size: 1.1em;
+    color: #333;
+    display: flex;
+    justify-content: flex-start; /* Align items at the start */
+    align-items: center; /* Align items vertically */
+    gap: 10px;
+    width: 100%; /* Ensure the container spans the full width */
+}
+
+.comment-left {
+    display: flex;
+    align-items: top; /* Align text and author on the same line */
+    flex: 1; /* Take remaining space */
+}
+
+.comment-author {
+    font-weight: bold;
+    color: #007BFF;
+    margin-right: 10px; /* Space between author and text */
+}
+
+.comment-text {
+    flex-grow: 1; /* Allow it to take up available space */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-all;
+    margin-bottom: 0; /* Remove extra margin below text */
+}
+
+.comment-right {
+    display: flex;
+    align-items: center; /* Align delete button and meta text horizontally */
+    gap: 10px; /* Add spacing between items */
+}
+
+.comment-meta {
+    font-size: 0.9em;
+    color: #666;
+    white-space: nowrap; /* Prevent meta text from wrapping */
+    text-align: right;
+}
+
+.delete-comment-form {
+    flex-shrink: 0; /* Prevent shrinking of delete button */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.delete-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.0em;
+    color: #555;
+    transition: color 0.3s;
+}
+
+.delete-button:hover {
+    color: red;
+}
+
+.delete-button::after {
+    content: " Delete Comment";
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0.3s;
+    font-size: 0.8em; /* Reduced size of the "Delete Comment" text */
+}
+
+.delete-button:hover::after {
+    visibility: visible;
+    opacity: 1;
+    font-size: 0.8em; /* Keep it reduced on hover */
+}
+
+.new-comment-form textarea {
+    width: 100%;
+    font-size: 1em;
+    padding: 0px 0px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.new-comment-form button {
+    background: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.new-comment-form button:hover {
+    background: #0056b3;
+}
+
+.captcha-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.captcha-box {
+    display: none;
+    flex-direction: column;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.3s ease;
+}
+
+.captcha-box label {
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.captcha-box input {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.captcha-box button {
+    background: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.captcha-box button:hover {
+    background: #0056b3;
+}
+
+/* Popup Box Styles */
+.popup-box {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust position to center */
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 20px;
+    z-index: 9999;
+    animation: zoomIn 0.3s ease-out;
+    transform-origin: center center; /* Ensure scaling starts from the center */
+}
+
+/* Popup Content */
+.popup-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-content p {
+    font-size: 1.2em;
+    color: #333; /* Default text color */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Target error messages specifically */
+.popup-error-message {
+    color: red; /* Apply red color to error messages */
+}
+
+.popup-content button {
+    background: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.popup-content button:hover {
+    background: #0056b3;
+}
+
+/* Zoom In Animation */
+@keyframes zoomIn {
+    from {
+        transform: scale(0.5) translate(-50%, -50%); /* Starts smaller and centered */
+        opacity: 0;
+    }
+    to {
+        transform: scale(1) translate(-50%, -50%); /* Ends at full size and centered */
+        opacity: 1;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Confirmation Popup */
+.confirm-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.confirm-popup .confirm-message {
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.confirm-popup button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.confirm-popup .confirm-yes {
+    background-color: red;
+    color: #fff;
+}
+
+.confirm-popup .confirm-no {
+    background-color: #ddd;
+    color: #333;
+}

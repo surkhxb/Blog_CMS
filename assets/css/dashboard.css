@@ -1,0 +1,122 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+main {
+    max-width: 1450px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #4a4a4a;
+}
+
+h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #6a2c8f;
+    border-left: 4px solid #6a2c8f;
+    padding-left: 10px;
+}
+
+/* Logout Button */
+form[method="GET"] button {
+    font-size: 14px;
+    border-radius: 6px;
+    padding: 8px 16px;
+    transition: background-color 0.3s ease;
+}
+
+form[method="GET"] button:hover {
+    background-color: #c0392b; /* Darker red */
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+table th {
+    background-color: #6a2c8f;
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Action Links */
+table a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+table a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+/* Section Separation */
+section {
+    margin-bottom: 30px;
+}
+
+section:last-child {
+    margin-bottom: 0;
+}
+
+/* Button Links */
+button, a.button-link {
+    background-color: #6a2c8f;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, a.button-link:hover {
+    background-color: #4a2373;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+    color: #888;
+    font-size: 14px;
+    background-color: #f4f4f9;
+}

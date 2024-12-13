@@ -1,0 +1,18 @@
+{
+    "name": "blog-cms/blog",
+    "description": "The Content Management System (CMS) for WordWave Publishing is an intuitive platform",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "BlogCms\\Blog\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "designed to facilitate the creation, management, and publication of blog articles on a wide range of"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
